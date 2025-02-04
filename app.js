@@ -6,9 +6,9 @@ dotenv.config({ path: "./config.env" });
 const authRouter = require("./route/authRoute");
 // const projectRouter = require('./route/projectRoute');
 // const userRouter = require('./route/userRoute');
-// const catchAsync = require('./utils/catchAsync');
-// const AppError = require('./utils/appError');
-// const globalErrorHandler = require('./controller/errorController');
+const catchAsync = require('./utils/catchAsync');
+const AppError = require('./utils/appError');
+const globalErrorHandler = require('./controllers/errorController');
 
 const app = express();
 
@@ -26,7 +26,7 @@ app.use("/api/v1/auth", authRouter);
 //   })
 // );
 
-// app.use(globalErrorHandler);
+app.use(globalErrorHandler);
 
 const PORT = process.env.APP_PORT || 4000;
 

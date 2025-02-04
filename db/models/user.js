@@ -3,7 +3,7 @@ const { Model, Sequelize, DataTypes } = require('sequelize');
 const sequelize = require("./../../config/database");
 const bcrypt = require("bcryptjs");
 
- const user = sequelize.define('user', {
+const user = sequelize.define('user', {
     id: {
       allowNull: false,
       autoIncrement: true,   
